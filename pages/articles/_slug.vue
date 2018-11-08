@@ -1,8 +1,14 @@
 <template>
   <section class="container">
-    <div class="title">{{ currentPost.fields.title }}</div>
-    <div class="text">
-      <div class="title">{{ currentPost.fields.mainText }}</div>
+    <div>
+      <nuxt-link to="/articles/" class="button--grey">ブログ一覧へ戻る</nuxt-link>
+      <div class="title">
+        <h1>{{ currentPost.fields.title }}</h1>
+        <p>公開日：{{ currentPost.fields.publishDate }}</p>
+      </div>
+      <div class="text">
+        {{ currentPost.fields.mainText }}
+      </div>
     </div>
   </section>
 </template>
@@ -41,16 +47,41 @@ export default {
   },
 };
 </script>
-
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  text-align: left;
+<style lang="css" scoped>
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-
+.container {
+  width: 960px;
+  min-height: 100vh;
+  margin: 50px auto;
+  text-align: left;
+  display: block;
+}
 .title {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.title p {
+  width: 20%;
+  font-size: 16px;
+  text-align: right;
+}
+h1 {
+  width: 80%;
   font-size: 30px;
+}
+.button--grey {
+  width: auto;
+  margin-bottom: 30px;
+}
+.text {
+  font-size: 16px;
+  line-height: 1.8;
 }
 </style>
