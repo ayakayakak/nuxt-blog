@@ -23,6 +23,7 @@
   </section>
 </template>
 
+
 <script>
   // contentfulの宣言
   import {createClient} from '~/plugins/contentful.js'

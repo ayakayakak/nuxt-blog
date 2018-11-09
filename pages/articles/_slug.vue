@@ -31,7 +31,7 @@ export default {
   asyncData({ env, params }) {
     return client
       .getEntries({
-        content_type: env.CTF_BLOG_POST_TYPE_ID,
+        'content_type': env.CTF_BLOG_ID,
       })
       .then((entries) => {
         const posts = entries.items;
@@ -47,6 +47,7 @@ export default {
   },
 };
 </script>
+
 <style lang="css" scoped>
 * {
   -webkit-box-sizing: border-box;
